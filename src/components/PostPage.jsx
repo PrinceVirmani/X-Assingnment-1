@@ -19,6 +19,15 @@ const PostPage = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  const titleHandler = (e) => {
+    setTitle(e.target.value);
+    title = "";
+  };
+
+  const contentHandler = (e) => {
+    setContent(e.target.value);
+    content = "";
+  };
   return (
     <div
       className={`${
@@ -36,7 +45,7 @@ const PostPage = () => {
         type="text"
         placeholder="Title"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={titleHandler}
         className={`w-full p-2 mb-4 border ${
           isDarkMode
             ? "border-gray-700 bg-gray-800 text-white"
@@ -46,7 +55,7 @@ const PostPage = () => {
       <textarea
         placeholder="Content"
         value={content}
-        onChange={(e) => setContent(e.target.value)}
+        onChange={contentHandler}
         className={`w-full p-2 mb-4 border ${
           isDarkMode
             ? "border-gray-700 bg-gray-800 text-white"
@@ -70,15 +79,13 @@ const PostPage = () => {
           } rounded shadow-lg max-w-4xl border`}
         >
           <div
-            className={`grid grid-cols-3 gap-4 ${
+            className={` gap-4 ${
               isDarkMode ? "bg-gray-900" : "bg-white"
             } rounded-lg p-6 relative`}
           >
-            <div className="col-span-2 pr-4 border-r border-gray-300">
+            <div className=" pr-4 border-r border-gray-300">
               <h2 className="text-3xl font-bold mb-2">{title}</h2>
               <p className="text-lg">{content}</p>
-            </div>
-            <div className="flex justify-center items-center">
               {image && (
                 <img
                   src={image}

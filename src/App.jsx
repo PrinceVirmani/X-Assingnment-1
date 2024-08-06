@@ -10,7 +10,7 @@ const App = () => {
       <h1 className="text-5xl font-bold mb-4 text-black">
         Welcome to the Post OG Image Generator
       </h1>
-      <Link to="/post/1" className="text-blue-800 underline text-2xl">
+      <Link to="/post" className="text-blue-800 underline text-2xl">
         Create a Post
       </Link>
     </div>

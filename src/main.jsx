@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/post" element={<PostPage />} />
       </Routes>
     </Router>
   </React.StrictMode>
